@@ -1,0 +1,4 @@
+- [x] Change <label> to <h2>
+- [ ] Add point system
+- [ ] Specify each choice with a hovering info panel
+- [ ] Resolve half of desired weight using exercise
