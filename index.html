@@ -44,7 +44,7 @@
           <h2>How do you perceive your diet intake at the moment?</h2>
           <label><input type ="radio" name="status" value=""> My daily food intake is below the expected level</label><br>
           <label><input type ="radio" name="status" value=""> My daily food intake is sufficient</label><br>
-          <label><input type ="radio" name="status" value=""> I feel like I might be overeating</label><br>          
+          <label><input type ="radio" name="status" value=""> I feel like I might be overeating</label><br>
         </div>
         <div class="savvy">
           <h2>How nutrition savvy you are?</h2>
@@ -61,16 +61,29 @@
         </div>
         <div class="condition">
           <h2>Do you have any medical/physical condition that makes you....?</h2>
-          <label><input type ="radio" name="condition" value="">Easily lose weight</label><br>
-          <label><input type ="radio" name="condition" value="">Easily gain weight</label><br>
-          <label><input type ="radio" name="condition" value="">Hardly gain or lose weight</label><br>
+          <select class="conditionMed" name="conditionMed">
+            <option value="">Easily lose weight</option>
+            <option value="">Easily gain weight</option>
+            <option value="">Neither lose or gain weight easily</option>
+          </select>
         </div>
-
       </div>
       <div class="goals">
         <div class="eatMore">
-          <h2>What food group do you want to eat more ?</h2>
-
+          <h2>What food group do you want to eat more?</h2>
+          <input type="checkbox" name="eatMore" value="">Fruits<br>
+          <input type="checkbox" name="eatMore" value="">Vegetables and Legumes<br>
+          <input type="checkbox" name="eatMore" value="">Grain, cereal, wholegrain or high fiber varieties<br>
+          <input type="checkbox" name="eatMore" value="">Meat, eggs and beans<br>
+          <input type="checkbox" name="eatMore" value="">Confections<br>
+        </div>
+        <div class="eatLess">
+          <h2>What food group do you want to eat less?</h2>
+          <input type="checkbox" name="eatLess" value="">Fruits<br>
+          <input type="checkbox" name="eatLess" value="">Vegetables and Legumes<br>
+          <input type="checkbox" name="eatLess" value="">Grain, cereal, wholegrain or high fiber varieties<br>
+          <input type="checkbox" name="eatLess" value="">Meat, eggs and beans<br>
+          <input type="checkbox" name="eatLess" value="">Confections<br>
         </div>
 
       </div>
