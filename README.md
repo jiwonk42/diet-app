@@ -1,3 +1,3 @@
--[x] Change <label> to <div class="form-group"
--[ ] Add point system
--[ ] Resolve half of desired weight using diet
+- [x] Change <label> to <div class="form-group"
+- [ ] Add point system
+- [ ] Resolve half of desired weight using diet
