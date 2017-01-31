@@ -5,9 +5,9 @@ function Exercise(totalScore) {
 }
 
 Exercise.prototype.results = function() {
-  if(this.totalScore >=28 && this.totalScore <= 37) {
+  if(this.totalScore >=19 && this.totalScore <= 27) {
     this.result = "high intensity";
-  } else if(this.totalScore >= 17 && this.totalScore <= 27) {
+  } else if(this.totalScore >= 11 && this.totalScore <= 18) {
     this.result = "medium";
   } else {
     this.result = "low";
@@ -32,7 +32,7 @@ $(document).ready(function() {
       inputExerciseType += parseInt($(this).val());
     });
 
-    var totalExercise = inputLifestyle + inputCurrentExercise + inputPriorityExercise + inputWeeklyExercise + inputExercisePriority + inputExerciseType;
+    var totalExercise = inputWeeklyExercise + inputExercisePriority + inputExerciseType;
 
     var scoreResult = new Exercise(totalExercise);
 
