@@ -1,9 +1,19 @@
 // Business Logic
 function Exercise(totalScore) {
   this.totalScore = totalScore;
+  this.result = "";
 }
 
-
+Exercise.prototype.results = function() {
+  if(this.totalScore >=28 && this.totalScore <= 37) {
+    this.result = "high intensity";
+  } else if(this.totalScore >= 17 && this.totalScore <= 27) {
+    this.result = "medium";
+  } else {
+    this.result = "low";
+  }
+  return this.result;
+}
 
 // User Interface Logic
 $(document).ready(function() {
@@ -24,7 +34,9 @@ $(document).ready(function() {
 
     var totalExercise = inputLifestyle + inputCurrentExercise + inputPriorityExercise + inputWeeklyExercise + inputExercisePriority + inputExerciseType;
 
-    console.log(totalExercise);
+    var scoreResult = new Exercise(totalExercise);
+
+    console.log(scoreResult.results());
 
   });
 });
