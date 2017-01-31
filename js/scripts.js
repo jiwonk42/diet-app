@@ -1,9 +1,18 @@
+//define global variables
+var score = 0;
 // business logic
+//Make original constructor
 function choice(habit,goals,number){
   this.habit = habit;
   this.goals = goals;
   this.number = number;
 }
+//Make prototype for radio question score
+choice.prototype.scoreHabit = function () {
+  for (var i = 0; i < habit.length; i++) {
+    habit[i]
+  }
+};
 
 
 // user logic goes here
