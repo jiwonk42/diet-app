@@ -1,7 +1,9 @@
 // Business Logic
-function Exercise() {
-
+function Exercise(totalScore) {
+  this.totalScore = totalScore;
 }
+
+
 
 // User Interface Logic
 $(document).ready(function() {
