@@ -27,7 +27,6 @@ Choice.prototype.scoreHabit = function () {
       score+=6
     }
   };
-  console.log(score);
 };
 //Make prototype for checkbox questions:
 Choice.prototype.scoreGoal = function () {
@@ -44,7 +43,6 @@ Choice.prototype.scoreGoal = function () {
       score+=1
     }
   }
-console.log(score);
 };
 //Make prototype for input field
 Choice.prototype.scoreNumber= function () {
@@ -52,6 +50,7 @@ Choice.prototype.scoreNumber= function () {
     score -= (this.number[1]/2)
   } else { score += (this.number[1]/2)}
 };
+
 // user logic goes here
 $(document).ready(function(){
 $("form").submit(function(event){
@@ -72,21 +71,16 @@ $("form").submit(function(event){
  $("input:checkbox[name=eatLess]:checked").each(function() {
    inputGoals.push($(this).val());
  });
- console.log(inputGoals);
  // Get dropdown menu input
  var inputWeight = $(".weightQn option:selected").val();
  var inputNumber= parseInt($("input#weightQn").val());
 
 //Create new object using constructor
  var userChoice = new Choice([inputBreakfast,inputLunch,inputDinner,inputStatus,inputSavvy,inputFiber,inputCondition],inputGoals,[inputWeight,inputNumber])
-console.log(userChoice);
 
 //Apply prototypes to new object
 userChoice.scoreHabit();
-console.log(score);
 userChoice.scoreGoal();
-console.log(score);
 userChoice.scoreNumber();
-console.log(score);
   });
 });
