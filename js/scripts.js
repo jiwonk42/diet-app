@@ -4,15 +4,6 @@ function Exercise(totalScore) {
   this.result = "";
 }
 
-var ExerciseTypes = {
-  rehab : ["20 min stretch", "15 min foam roll stretch"],
-  low : ["20 min walk", "10 min jog"],
-  resistence : ["30 min weight lighting"],
-  activities : ["30 min biking", "60 min hiking", "60 min rock climbing"],
-  core : ["45 min pilates", "60 min yoga"],
-  high : ["30 min circut training", "15 min interval sprinting"]
-}
-
 Exercise.prototype.results = function() {
   if(this.totalScore >=19 && this.totalScore <= 27) {
     this.result = "high intensity";
@@ -23,6 +14,41 @@ Exercise.prototype.results = function() {
   }
   return this.result;
 }
+
+var exerciseTypes = ["30 min ", "45 min ", "60 min ", "foam roll stretching ", "jogging ", "biking ", "and circut training", "and weight lifting", "and rock climbing"]
+var newExercise = [];
+var n = 0;
+var p = 0;
+
+
+function printExercise() {
+
+  for(i = 0; i<3; i ++) {
+    for(j=3; j <7; j++) {
+      for (k=6; k < exerciseTypes.length; k++) {
+        newExercise.push(exerciseTypes[i] + exerciseTypes[j] + exerciseTypes[k])
+      }
+    }
+  }
+}
+
+printExercise();
+var e = newExercise.length;
+
+function exerciseShuffle() {
+  while(0 !== e) {
+
+    n = Math.floor(Math.random() * e);
+    e--;
+
+    p = newExercise[e];
+    newExercise[e] = newExercise[n];
+    newExercise[n] = p;
+  }
+  return newExercise;
+}
+exerciseShuffle(newExercise);
+
 
 // User Interface Logic
 $(document).ready(function() {
@@ -36,37 +62,16 @@ $(document).ready(function() {
     var inputExercisePriority = parseInt($("input:radio[name=exercisePriority]:checked").val());
     var inputExerciseType = parseInt($("input:checkbox[name=exerciseType]:checked").val());
 
-    var inputExerciseType = 0;
-    var exerciseTypeArray = [];
-    var totalExercise = inputWeeklyExercise + inputExercisePriority + inputExerciseType;
-    var scoreResult = new Exercise(totalExercise);
 
     $("input:checkbox[name=exerciseType]:checked").each(function() {
       inputExerciseType += parseInt($(this).val());
       var suggestedExercise = "";
 
-      if ($(this).val() === "1") { // Rehabilitation
-        suggestedExercise = ExerciseTypes.rehab;
-      } else if ($(this).val() === "2") { // Low Intensity Training
-        suggestedExercise = ExerciseTypes.low;
-      } else if ($(this).val() === "3") { // Resistence Training
-        suggestedExercise = ExerciseTypes.resistence;
-      } else if ($(this).val() === "4") { // Activities
-        suggestedExercise = ExerciseTypes.activities;
-      } else if ($(this).val() === "5") { // Core Strength
-        suggestedExercise = ExerciseTypes.core;
-      } else { // High Intensity Training
-        suggestedExercise = ExerciseTypes.high;
+      if ($(this).val() === "1" || $(this).val() === "2") {
+      } else if ($(this).val() === "3" || $(this).val() === "4") {
+      } else { 
       }
-      exerciseTypeArray.push(suggestedExercise);
     });
-
-
-    // for(var i=0; i< exerciseTypeArray.length; i++) {
-    //   //if(exerciseTypeArray[i] === 21)
-    //   eachValue += parseInt();
-    // }
-
 
 
   });
