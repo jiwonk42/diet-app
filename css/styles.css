@@ -1,0 +1,7 @@
+#gainParagraph, #vegetableGain, #fruitGain, #cerealGain, #meatGain, #sweetsGain {
+  display: none;
+}
+
+#loseParagraph, #vegetableLoss, #fruitLoss, #cerealLoss, #meatLoss, #sweetsLoss {
+  display: none;
+}

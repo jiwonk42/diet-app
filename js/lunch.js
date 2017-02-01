@@ -1,3 +1,5 @@
+//Business logic
+
 var lunchMenu = ["wheat sandwich with ","organic wraps with ", "brown rice with ", "chicken breasts ", "kale " , "organic avocado dressing ","and fruit salad" , "and greek yoghurt",
 "and lentil soups"]
 
@@ -34,3 +36,21 @@ function shuffle(lunchMeal) {
   return lunchMeal;
 }
 shuffle(lunchMeal);
+
+
+//User logic
+$(document).ready(function(){
+ $("form").submit(function(event){
+   event.preventDefault();
+
+   var inputLunch = $("")
+
+
+
+
+ });
+
+
+
+
+});
