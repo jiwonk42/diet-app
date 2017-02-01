@@ -1,5 +1,6 @@
-- [x] Change <label> to <div class="form-group"
-- [x] Add point system
-- [x] Resolve half of desired weight using diet
-- [ ] Shruti: name of app, copy write quotes, punchline. Fixed float nav bar
-- [ ] Minh: first page. results, icons, contact 
+- [ ] Full screen slide up after diet section
+- [ ] Question slide in
+- [ ] Sassiness array, math floor, math random for loop
+- [ ] Social media links, twitter icons
+- [ ] Quotations
+- [ ] Mail to, contact us
