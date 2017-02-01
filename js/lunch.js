@@ -8,7 +8,7 @@ var temp = 0;
 //Printing combination for lunch
 function printLunchMenu() {
 	for (var i = 0; i < 3; i++) {
-		for (var j = 3; j < 7; j++) {
+		for (var j = 3; j < 6; j++) {
 			for (var k = 6; k < lunchMenu.length; k++) {
 				lunchMeal.push(lunchMenu[i] + lunchMenu[j] + lunchMenu[k]);
       }
