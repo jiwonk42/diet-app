@@ -1,3 +1,5 @@
 - [x] Change <label> to <div class="form-group"
-- [ ] Add point system
-- [ ] Resolve half of desired weight using diet
+- [x] Add point system
+- [x] Resolve half of desired weight using diet
+- [ ] Shruti: name of app, copy write quotes, punchline. Fixed float nav bar
+- [ ] Minh: first page. results, icons, contact 
