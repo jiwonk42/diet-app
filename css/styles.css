@@ -1,4 +1,6 @@
-
+.jumbotron {
+  text-align: center;
+}
 
 .card-img-top {
   max-width: 100%
