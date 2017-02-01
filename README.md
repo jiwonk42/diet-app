@@ -1,4 +1,6 @@
 - [x] Change label to h2
-- [ ] Add point system
+- [x] Add point system
 - [ ] Specify each choice with a hovering info panel
 - [ ] Resolve half of desired weight using exercise
+- [ ] Tammy: Article section, outside resources(mental health, local grocery etc), name of app
+- [ ] Jiwon: Researching ideas for logos, images, visuals
