@@ -18,6 +18,7 @@ function printExercise() {
   }
 }
 printExercise();
+
 //Create functions to shuffle the combinations
 var e = newExercise.length;
 
@@ -35,54 +36,12 @@ function exerciseShuffle() {
 }
 exerciseShuffle(newExercise);
 
-function makeTable2low () {
-  for( index = 0; index < 5; index+=2) {
-tableExercise += "<tr>" + "<td>" + newExercise[index] + "</td>" + "<td>" + newExercise[index+1] + "</td>" + "</tr>" }
-}
-
-function makeTable2medium () {
-  for( index = 0; index < 7; index+=2) {
-tableExercise += "<tr>" + "<td>" + newExercise[index] + "</td>" + "<td>" + newExercise[index+1] + "</td>" + "</tr>" }
-}
-
-function makeTable2intense () {
-  for( index = 0; index < 10; index+=2) {
-tableExercise += "<tr>" + "<td>" + newExercise[index] + "</td>" + "<td>" + newExercise[index+1] + "</td>" + "</tr>" }
-}
-//Create table for suggestion for 4 day routine
-function makeTable4low () {
-  for( index = 0; index < 5; index+=4) {
-tableExercise += "<tr>" + "<td>" + newExercise[index] + "</td>" + "<td>" + newExercise[index+1] + "</td>" + "<td>" + newExercise[index+2] + "</td>" + "<td>" + newExercise[index+3] + "</td>" + "</tr>" }
-}
-
-function makeTable4medium () {
-  for( index = 0; index < 9; index+=4) {
-tableExercise += "<tr>" + "<td>" + newExercise[index] + "</td>" + "<td>" + newExercise[index+1] + "</td>" + "<td>" + newExercise[index+2] + "</td>" + "<td>" + newExercise[index+3] + "</td>" + "</tr>" }
-}
-
-function makeTable4intense () {
-  for( index = 0; index < 14; index+=4) {
-tableExercise += "<tr>" + "<td>" + newExercise[index] + "</td>" + "<td>" + newExercise[index+1] + "</td>" + "<td>" + newExercise[index+2] + "</td>" + "<td>" + newExercise[index+3] + "</td>" + "</tr>" }
-}
-//Create table for suggestion for 6 day routine
-function makeTable6low () {
-  for( index = 0; index < 11; index+=6) {
-tableExercise += "<tr>" + "<td>" + newExercise[index] + "</td>" + "<td>" + newExercise[index+1] + "</td>" + "<td>" + newExercise[index+2] + "</td>" + "<td>" + newExercise[index+3] + "</td>" +  "<td>" + newExercise[index+4] + "</td>" + "<td>" + newExercise[index+5] + "</td>" +"</tr>" }
-}
-
-function makeTable6medium () {
-  for( index = 0; index < 18; index+=6) {
-tableExercise += "<tr>" + "<td>" + newExercise[index] + "</td>" + "<td>" + newExercise[index+1] + "</td>" + "<td>" + newExercise[index+2] + "</td>" + "<td>" + newExercise[index+3] + "</td>" +  "<td>" + newExercise[index+4] + "</td>" + "<td>" + newExercise[index+5] + "</td>" +"</tr>" }
-}
-
-function makeTable6intense () {
-  for( index = 0; index < 23; index+=6) {
-tableExercise += "<tr>" + "<td>" + newExercise[index] + "</td>" + "<td>" + newExercise[index+1] + "</td>" + "<td>" + newExercise[index+2] + "</td>" + "<td>" + newExercise[index+3] + "</td>" +  "<td>" + newExercise[index+4] + "</td>" + "<td>" + newExercise[index+5] + "</td>" +"</tr>" }
-}
 // User Interface Logic
 $(document).ready(function() {
   $("form").submit(function(event) {
     event.preventDefault();
+    var limit = 0;
+    var tableExercise = ""
 //Get user input and retrieve value into variables
     var inputLifestyle = parseInt($("input:radio[name=lifestyle]:checked").val());
     var inputCurrentExercise = parseInt($("input:radio[name=currentExercise]:checked").val());
@@ -91,6 +50,7 @@ $(document).ready(function() {
     console.log(inputWeeklyExercise);
     var totalScore = 0; var result = ""
     var totalScore = inputLifestyle+inputCurrentExercise+inputPriorityExercise+inputWeeklyExercise;
+//Assess User's Answer
     function makeResult() {
       if(totalScore >=16 && totalScore <= 24) {
         result = "high intensity";
@@ -102,37 +62,69 @@ $(document).ready(function() {
       return result;
     }
     makeResult();
+    console.log(totalScore);
+    console.log(result);
+
+    //Create a table for suggestion for 2 day routine REFACTORING with nested for loops
+    function findLimit2 () {
+      if(result === "low") {
+        limit += 5
+      } else if (result === "medium") {
+        limit += 7
+      } else { limit += 10 }; return limit;
+    }
+    function makeTable2() {
+      var maxLimit = findLimit2()
+      for( index = 0; index < maxLimit ; index+=2) {
+    tableExercise += "<tr>" + "<td>" + newExercise[index] + "</td>" + "<td>" + newExercise[index+1] + "</td>" + "</tr>" }
+    }
+
+    //Create table for suggestion for 4 day routine
+    function findLimit4 () {
+      if(result === "low") {
+        limit += 5
+      } else if (result === "medium") {
+        limit += 9
+      } else {
+        limit += 14
+      };return limit;
+    }
+    function makeTable4() {
+      var maxLimit = findLimit4();
+        for( index = 0; index < maxLimit; index+=4) {
+      tableExercise += "<tr>" + "<td>" + newExercise[index] + "</td>" + "<td>" + newExercise[index+1] + "</td>" + "<td>" + newExercise[index+2] + "</td>" + "<td>" + newExercise[index+3] + "</td>" + "</tr>" }
+    }
+
+    //Create table for suggestion for 6 day routine
+    function findLimit6 () {
+      if(result === "low") {
+        limit += 11
+      } else if (result === "medium") {
+        limit += 18
+      } else { limit += 23 }; return limit;
+    }
+    function makeTable6() {
+      var maxLimit = findLimit6();
+      for( index = 0; index < maxLimit; index+=6) {
+    tableExercise += "<tr>" + "<td>" + newExercise[index] + "</td>" + "<td>" + newExercise[index+1] + "</td>" + "<td>" + newExercise[index+2] + "</td>" + "<td>" + newExercise[index+3] + "</td>" +  "<td>" + newExercise[index+4] + "</td>" + "<td>" + newExercise[index+5] + "</td>" +"</tr>" }
+    }
+
 
     function outputResult() {
       tableExercise = ""
       $("#weeklyRoutine").text("")
       if (inputWeeklyExercise === 1) {
-        if (result === "low" ) {
-          makeTable2low (newExercise)
-        } else if (result === "medium") {
-          makeTable2medium(newExercise)
-        } else {makeTable2intense(newExercise)}
+        makeTable2(newExercise);
+        console.log(tableExercise);
          $("#weeklyRoutine").append("<table>"+"<tr>"+"<th>Day One</th>"+"<th>Day Two</th>"+"</tr>"+tableExercise+"</table>")
       } else if (inputWeeklyExercise === 2) {
-        if (result === "low") {
-          makeTable4low(newExercise)
-        } else if (result=== "medium") {
-          makeTable4medium(newExercise)
-        } else {makeTable4intense(newExercise) }
+        makeTable4(newExercise);
         $("#weeklyRoutine").append("<table>"+"<tr>"+"<th>Day One</th>"+"<th>Day Two</th>"+"<th>Day Three</th>"+"<th>Day Four</th>"+"</tr>"+tableExercise+"</table>")
       } else {
-        if (result === "low" ) {
-          makeTable6low (newExercise)
-        } else if (result === "medium") {
-          makeTable6medium(newExercise)
-        } else {makeTable6intense(newExercise)}
+        makeTable6(newExercise);
         $("#weeklyRoutine").append("<table>"+"<tr>"+"<th>Day One</th>"+"<th>Day Two</th>"+"<th>Day Three</th>"+"<th>Day Four</th>"+"<th>Day Five</th>"+"<th>Day Six</th>"+"</tr>"+tableExercise+"</table>")
       }
     }
     outputResult()
-
-
-
-
   });
 });
