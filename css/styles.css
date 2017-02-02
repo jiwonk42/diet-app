@@ -5,3 +5,17 @@
 #loseParagraph, #vegetableLoss, #fruitLoss, #cerealLoss, #meatLoss, #sweetsLoss {
   display: none;
 }
+
+.navbar-inverse{
+  background: rgba(0, 128, 43, 0.5);
+}
+
+
+.searchbar {
+  font-size: 30px;
+  position: absolute;
+  right:14%;
+}
+.navbar-inverse .navbar-nav > li > a {
+    color: #f4ce42;
+}
