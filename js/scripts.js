@@ -1,7 +1,6 @@
-//Define global variables
+//Business logic
 var score = 0;
 
-//Business logic
 //For Breakfast
 var breakfastMenu = ["Whole-wheat bread with ", "quinoa with ", " oatmeals with ", "broccoli ", "berries ", "eggs ", "and greek yogurt", "and smoothie ", "and roasted nuts"];
 
@@ -203,10 +202,10 @@ exerciseShuffle(newExercise);
 
 
 // user logic goes here
-$(document).ready(function(){
+$(document).ready(function() {
   $(".diet, .exercise").unslider();
 
-  $("form").submit(function(event){
+  $(".formSubmit").submit(function(event){
     event.preventDefault();
 
     //Make radio input into variable
@@ -272,6 +271,7 @@ $(document).ready(function(){
     userChoice.scoreGoal();
     userChoice.scoreNumber();
     var tableMeal = "";
+
     //Table for 7 day meal plan (breakfast, lunch, and dinner)
     function makeWeekMeal() {
       for(i = 0; i < 2; i+=2) {
