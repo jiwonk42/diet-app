@@ -228,11 +228,11 @@ $(document).ready(function(){
     userChoice.scoreHabit();
     userChoice.scoreGoal();
     userChoice.scoreNumber();
-    var tableExercise = "";
+    var tableMeals = "";
     //Table for 7 day meal plan (breakfast, lunch, and dinner)
     function makeWeekMeal() {
       for(i = 0; i < 2; i+=2) {
-        tableExercise += "<tr>" + "<td>" + breakfastMeal[i] + "</td>" + "<td>" +
+        tableMeals += "<tr>" + "<td>" + breakfastMeal[i] + "</td>" + "<td>" +
 				 breakfastMeal[i+1] + "<td>" + breakfastMeal[i+2] +"</td>" + "<td>" +
 				 breakfastMeal[i+3] + "</td>" + "<td>" + breakfastMeal[i+4] + "</td>" +
 				 "<td>" + breakfastMeal[i+5] + "</td>" + "<td>" + breakfastMeal[i+6] +
@@ -254,6 +254,6 @@ $(document).ready(function(){
     $("#mealResults").append("<table>" + "<tr>" + "<th>Day One</th>" + "<th>Day Two</th>" + "<th>Day Three</th>" + "<th>Day Four</th>" + "<th>Day Five</th>" + "<th>Day Six</th>" + "<th>Day Seven</th>" + "</tr>" + tableMeals + "</table>");
     }
     outputResults();
-
+    $("#tableHide").show(); 
   });
 });

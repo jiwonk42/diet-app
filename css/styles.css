@@ -52,3 +52,11 @@
 #loseParagraph, #vegetableLoss, #fruitLoss, #cerealLoss, #meatLoss, #sweetsLoss {
   display: none;
 }
+
+.eatLessGain {
+  display: none;
+}
+
+#tableHide {
+  display: none;
+}
