@@ -223,19 +223,30 @@ $(document).ready(function(){
     userChoice.scoreGoal();
     userChoice.scoreNumber();
     var tableExercise = "";
-    //Table for 7 day meal plan
+    //Table for 7 day meal plan (breakfast, lunch, and dinner)
     function makeWeekMeal() {
-      for(i = 0; i < 2; i++) {
-        tableExercise += "<tr>" + "<td>" + breakfastMeal[i] + "</td>" + "<td>" + breakfastMeal[i+1] + "</td>" + "</tr>";
+      for(i = 0; i < 2; i+=2) {
+        tableExercise += "<tr>" + "<td>" + breakfastMeal[i] + "</td>" + "<td>" +
+				 breakfastMeal[i+1] + "<td>" + breakfastMeal[i+2] +"</td>" + "<td>" +
+				 breakfastMeal[i+3] + "</td>" + "<td>" + breakfastMeal[i+4] + "</td>" +
+				 "<td>" + breakfastMeal[i+5] + "</td>" + "<td>" + breakfastMeal[i+6] +
+				 "</td>" + "</tr>" + "<tr>" + "<td>" + lunchMeal[i] + "</td>" + "<td>" +
+				 lunchMeal[i+1] + "</td>" + "<td>" + lunchMeal[i+2] + "<td>" +
+				 lunchMeal[i+3] + "<td>" + lunchMeal[i+4] + "<td>" + lunchMeal[i+5] +
+				 "<td>" + lunchMeal[i+6] + "</td>" + "</tr>" + "<tr>" + "<td>" +
+				 dinnerMeal[i] + "</td>"+ "<td>" + dinnerMeal[i+1] + "</td>" + "<td>" +
+				 dinnerMeal[i+2] + "</td>"+ "<td>" + dinnerMeal[i+3] + "</td>"+ "<td>" +
+				 dinnerMeal[i+4] + "</td>"+ "<td>" + dinnerMeal[i+5] + "</td>"+ "<td>" +
+				 dinnerMeal[i+6] + "</td>" +"</tr>";
       }
     }
+		//Output meal plan to page
     function outputResults() {
     tableExercise = "";
     makeWeekMeal(breakfastMeal);
-    $("#mealResults").append("<table>" + "<tr>" + "<th>Day One</th>" + "<th>Day Two</th>" + "</tr>" + tableExercise + "</table>");
+    $("#mealResults").append("<table>" + "<tr>" + "<th>Day One</th>" + "<th>Day Two</th>" + "<th>Day Three</th>" + "<th>Day Four</th>" + "<th>Day Five</th>" + "<th>Day Six</th>" + "<th>Day Seven</th>" + "</tr>" + tableExercise + "</table>");
     }
     outputResults();
 
-    // "<th>Day " + (i + 1) + "</th>"
   });
 });
