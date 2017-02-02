@@ -3,7 +3,7 @@ var score = 0;
 
 //Business logic
 //For Breakfast
-var breakfastMenu = ["salad with ", "quinoa with ", " oatmeals with ", "broccoli ", "chicken breast ", "salmon ", " and lemon dressing ", "and sesame dressing ", "and roasted nuts"];
+var breakfastMenu = ["Whole-wheat bread with ", "quinoa with ", " oatmeals with ", "broccoli ", "berries ", "eggs ", "and greek yogurt", "and smoothie ", "and roasted nuts"];
 
 var breakfastMeal = [];
 
@@ -158,11 +158,6 @@ Choice.prototype.scoreNumber= function () {
   } else { score += (this.number[1]/2)}
 };
 
-
-
-
-
-
 // user logic goes here
 $(document).ready(function(){
   $("form").submit(function(event){
@@ -227,5 +222,20 @@ $(document).ready(function(){
     userChoice.scoreHabit();
     userChoice.scoreGoal();
     userChoice.scoreNumber();
+    var tableExercise = "";
+    //Table for 7 day meal plan
+    function makeWeekMeal() {
+      for(i = 0; i < 2; i++) {
+        tableExercise += "<tr>" + "<td>" + breakfastMeal[i] + "</td>" + "<td>" + breakfastMeal[i+1] + "</td>" + "</tr>";
+      }
+    }
+    function outputResults() {
+    tableExercise = "";
+    makeWeekMeal(breakfastMeal);
+    $("#mealResults").append("<table>" + "<tr>" + "<th>Day One</th>" + "<th>Day Two</th>" + "</tr>" + tableExercise + "</table>");
+    }
+    outputResults();
+
+    // "<th>Day " + (i + 1) + "</th>"
   });
 });
