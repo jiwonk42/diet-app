@@ -43,3 +43,12 @@
   width: 300px;
   height: 200px;
 }
+
+/*Diet Section*/
+#gainParagraph, #vegetableGain, #fruitGain, #cerealGain, #meatGain, #sweetsGain {
+  display: none;
+}
+
+#loseParagraph, #vegetableLoss, #fruitLoss, #cerealLoss, #meatLoss, #sweetsLoss {
+  display: none;
+}
